@@ -5,9 +5,11 @@ import { Home } from './src/screens'
 
 const App = () => {
   const [data,setData]=useState(null)
+  
   useEffect(()=>{
     axios.get('https://api.themoviedb.org/3/movie/157336?api_key=1f10c0b800ff93a56985100ba46bb3eb').then(res=>{
       setData(res.data)
+      console.log('....')
     }).catch(err=>{
       console.log("Error"+err)
     })
